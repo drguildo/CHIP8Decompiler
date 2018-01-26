@@ -130,7 +130,18 @@ namespace CHIP8Decompiler {
 
         static string ToHex(int n) => $"0x{n:X4}";
 
-        static int GetX(int n) => (n & 0x0F00) >> 8;
-        static int GetY(int n) => (n & 0x00F0) >> 4;
+        /// <summary>
+        /// Extract the first register an opcode operates on from the opcode.
+        /// </summary>
+        /// <param name="opcode"></param>
+        /// <returns>The register encoded in the opcode.</returns>
+        static int GetX(int opcode) => (opcode & 0x0F00) >> 8;
+
+        /// <summary>
+        /// Extract the second register an opcode operates on from the opcode.
+        /// </summary>
+        /// <param name="opcode"></param>
+        /// <returns>The register encoded in the opcode.</returns>
+        static int GetY(int opcode) => (opcode & 0x00F0) >> 4;
     }
 }
