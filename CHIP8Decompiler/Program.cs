@@ -56,7 +56,7 @@ namespace CHIP8Decompiler {
                     }
                     break;
                 case 0x6000:
-                    return $"V{(opcode & 0x0F00) >> 8} = {opcode & 0x00FF}";
+                    return $"V{GetX(opcode)} = {opcode & 0x00FF}";
                 case 0x7000:
                     return $"V{GetX(opcode)} += {(opcode & 0x00FF)}";
                 case 0x8000:
