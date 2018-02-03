@@ -117,7 +117,7 @@ namespace CHIP8Decompiler {
                         case 0x0029:
                             return $"I = sprite_addr[V{GetX(opcode)}]";
                         case 0x0033:
-                            return $"set_BCD(V{GetX(opcode)}); * (I + 0) = BCD(3); *(I + 1) = BCD(2); *(I + 2) = BCD(1); ";
+                            return $"set_BCD(V{GetX(opcode)}); * (I + 0) = BCD(3); *(I + 1) = BCD(2); *(I + 2) = BCD(1);";
                         case 0x0055:
                             return $"reg_dump(V{GetX(opcode)}, &I)";
                         case 0x0065:
